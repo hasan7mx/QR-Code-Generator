@@ -1,0 +1,36 @@
+# QR Code Generator
+
+import qrcode
+
+def generate_qr():
+    data = input("Enter text or URL: ")
+    file_name = input("Enter file name (without .png): ")
+
+    # Generate QR Code
+    img = qrcode.make(data)
+
+    # Save file
+    img.save(file_name + ".png")
+
+    print("QR Code saved successfully!\n")
+
+
+def main():
+    while True:
+        print("===== QR Code Generator =====")
+        print("1. Generate QR Code")
+        print("2. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            generate_qr()
+        elif choice == "2":
+            print("Program ended.")
+            break
+        else:
+            print("Invalid choice! Please try again.\n")
+
+
+# Start program
+main()
